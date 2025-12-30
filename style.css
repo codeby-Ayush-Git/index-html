@@ -1,68 +1,58 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap');
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  --font-display: 'Outfit', sans-serif;
-  --font-body: 'Inter', sans-serif;
-
-  /* Modern Dark/Cyber Theme Palette */
-  --background: 222 47% 11%;
-  --foreground: 210 40% 98%;
-  
-  --primary: 252 87% 67%;       /* Vibrant Purple/Indigo */
-  --primary-foreground: 210 40% 98%;
-  
-  --secondary: 217 33% 17%;     /* Darker Slate */
-  --secondary-foreground: 210 40% 98%;
-  
-  --muted: 217 33% 17%;
-  --muted-foreground: 215 20% 65%;
-  
-  --accent: 190 90% 50%;        /* Cyan Accent */
-  --accent-foreground: 222 47% 11%;
-  
-  --destructive: 0 84% 60%;
-  --destructive-foreground: 210 40% 98%;
-
-  --border: 217 33% 17%;
-  --input: 217 33% 17%;
-  --ring: 252 87% 67%;
-  
-  --radius: 0.75rem;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
-@layer base {
-  body {
-    @apply bg-background text-foreground antialiased selection:bg-primary/30 selection:text-primary-foreground;
-    font-family: var(--font-body);
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-display);
-    @apply font-bold tracking-tight;
-  }
+body {
+  background: #0f172a;
+  color: #e5e7eb;
+  line-height: 1.6;
 }
 
-@layer utilities {
-  .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-purple-400 to-accent;
-  }
-  
-  .glass {
-    @apply bg-secondary/30 backdrop-blur-md border border-white/10;
-  }
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
+.hero h1 {
+  font-size: 3rem;
+  color: #38bdf8;
 }
-::-webkit-scrollbar-track {
-  @apply bg-background;
+
+.hero p {
+  font-size: 1.2rem;
+  margin: 10px 0;
 }
-::-webkit-scrollbar-thumb {
-  @apply bg-primary/30 rounded-full hover:bg-primary/50 transition-colors;
+
+.btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #38bdf8;
+  color: #0f172a;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+section {
+  padding: 60px 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.projects ul {
+  margin-top: 15px;
+  list-style: square;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #020617;
 }
