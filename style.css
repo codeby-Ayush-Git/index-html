@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: 'Outfit', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* Modern Dark/Cyber Theme Palette */
+  --background: 222 47% 11%;
+  --foreground: 210 40% 98%;
+  
+  --primary: 252 87% 67%;       /* Vibrant Purple/Indigo */
+  --primary-foreground: 210 40% 98%;
+  
+  --secondary: 217 33% 17%;     /* Darker Slate */
+  --secondary-foreground: 210 40% 98%;
+  
+  --muted: 217 33% 17%;
+  --muted-foreground: 215 20% 65%;
+  
+  --accent: 190 90% 50%;        /* Cyan Accent */
+  --accent-foreground: 222 47% 11%;
+  
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 210 40% 98%;
+
+  --border: 217 33% 17%;
+  --input: 217 33% 17%;
+  --ring: 252 87% 67%;
+  
+  --radius: 0.75rem;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground antialiased selection:bg-primary/30 selection:text-primary-foreground;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    @apply font-bold tracking-tight;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-purple-400 to-accent;
+  }
+  
+  .glass {
+    @apply bg-secondary/30 backdrop-blur-md border border-white/10;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-background;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-primary/30 rounded-full hover:bg-primary/50 transition-colors;
+}
